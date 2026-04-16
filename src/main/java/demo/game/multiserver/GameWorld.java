@@ -13,6 +13,7 @@ public class GameWorld {
     public void addPlayer(String name, Player player, PrintWriter out) {
         players.put(name, player);
         outputs.put(name, out);
+
     }
 
     public void removePlayer(String name) {
