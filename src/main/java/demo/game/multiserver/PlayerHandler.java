@@ -50,4 +50,21 @@ public class PlayerHandler implements Runnable {
             try { socket.close();} catch (IOException ignored) {}
         }
     }
+
+    private void handleCommand(String command, Player player, PrintWriter output) {
+        switch (command) {
+            case "north" -> {player.move(0, -1);
+                            world.broadcast(playerName + " moved north to " + player.getPosition());}
+            case "south" -> {player.move(0, 1);
+                            world.broadcast(playerName + " moved south to " + player.getPosition());}
+            case "east" -> {player.move(1, 0);
+                             world.broadcast(playerName + " moved east to " + player.getPosition());}
+            case "west" -> {player.move(-1, 0);
+                            world.broadcast(playerName + " moved west to " + player.getPosition());}
+            case "look" -> output.println(world.getWorldState());
+            case "quit" -> {output.println("Goodbye!");
+                            try {socket.close();} catch (IOException e) {}}
+            default -> output.println("Unknown command: " + command);
+        }
+    }
 }
