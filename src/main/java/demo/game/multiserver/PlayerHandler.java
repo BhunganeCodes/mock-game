@@ -63,7 +63,8 @@ public class PlayerHandler implements Runnable {
                             world.broadcast(playerName + " moved west to " + player.getPosition());}
             case "look" -> output.println(world.getWorldState());
             case "quit" -> {output.println("Goodbye!");
-                            try {socket.close();} catch (IOException e) {}}
+                            try {socket.close();
+                            System.exit(0);} catch (IOException e) {}}
             default -> output.println("Unknown command: " + command);
         }
     }

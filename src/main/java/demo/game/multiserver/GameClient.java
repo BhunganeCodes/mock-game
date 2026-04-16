@@ -34,7 +34,7 @@ public class GameClient {
         while (keyboard.hasNextLine()) {
             toServer.println(keyboard.nextLine());
         }
-        keyboard.close();
+        // keyboard.close();
         socket.close();
     }
 }
