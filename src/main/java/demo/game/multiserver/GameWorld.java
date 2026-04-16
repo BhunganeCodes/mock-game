@@ -18,6 +18,7 @@ public class GameWorld {
     public void removePlayer(String name) {
         players.remove(name);
         outputs.remove(name);
+
     }
 
     public Player getPlayer(String name){
