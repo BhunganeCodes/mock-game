@@ -9,7 +9,7 @@ public class GameClient {
     public static void main(String[] args) throws IOException {
 
         // Connect to the server running on this machine
-        Socket socket = new Socket("localhost", 8080);
+        Socket socket = new Socket("20.20.90.49", 8080);
         System.out.println("Connected! Type commands and press Enter.");
 
         BufferedReader fromServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));
